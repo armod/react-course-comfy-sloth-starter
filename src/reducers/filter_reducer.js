@@ -11,10 +11,14 @@ import {
 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
+    let maxPrice = action.payload.map((p) => p.price)
+    maxPrice = Math.max(...maxPrice) // nie mozna zapisać Math.max(maxPrice) - bo nie można przypisać do max() bezpośrednio tablicy
+    console.log(maxPrice)
     return {
       ...state,
       all_products: [...action.payload],
       filtered_products: [...action.payload],
+      filters: { ...state.filters, max_price: maxPrice, price: maxPrice },
     }
   }
   if (action.type === SET_GRIDVIEW) {
@@ -30,7 +34,7 @@ const filter_reducer = (state, action) => {
     const { sort, filtered_products } = state
     let tempProducts = [...filtered_products]
     if (sort === 'price-lowest') {
-      console.log('price-lowest')
+      // console.log('price-lowest')
       tempProducts = tempProducts.sort((a, b) => a.price - b.price)
       // drugi sposób sortowania
       // tempProducts = tempProducts.sort((a, b) => {
