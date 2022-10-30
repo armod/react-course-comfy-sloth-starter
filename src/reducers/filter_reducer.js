@@ -18,7 +18,7 @@ const filter_reducer = (state, action) => {
       ...state,
       all_products: [...action.payload],
       filtered_products: [...action.payload],
-      filters: { ...state.filters, max_price: maxPrice, price: maxPrice },
+      filters: { ...state.filters, max_price: maxPrice, price: maxPrice }, //gdy dodam od razu maxPrice do statu to pojawi sie powyżej filters
     }
   }
   if (action.type === SET_GRIDVIEW) {
