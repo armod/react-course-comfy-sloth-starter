@@ -48,17 +48,17 @@ const filter_reducer = (state, action) => {
       // })
     }
     if (sort === 'price-highest') {
-      console.log('price-highest')
+      // console.log('price-highest')
       tempProducts = tempProducts.sort((a, b) => b.price - a.price)
     }
     if (sort === 'name-a') {
-      console.log('name-a')
+      // console.log('name-a')
       tempProducts = tempProducts.sort((a, b) => {
         return a.name.localeCompare(b.name)
       })
     }
     if (sort === 'name-z') {
-      console.log('name-z')
+      // console.log('name-z')
       tempProducts = tempProducts.sort((a, b) => {
         return b.name.localeCompare(a.name)
       })
