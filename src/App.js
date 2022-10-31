@@ -10,7 +10,6 @@ import {
   Error,
   Checkout,
   PrivateRoute,
-  Auth,
   AuthWrapper,
 } from './pages'
 
